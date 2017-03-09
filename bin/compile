@@ -1,9 +1,16 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 BP_DIR=$(cd $(dirname $0); cd ..; pwd)
 
 indent() {
   sed -u 's/^/       /'
+}
+
+print_contents_if_exists() {
+  if [[ -d $1 ]]; then
+    echo "Directory '$1' exists, and has contents:"
+    ls $1
+  fi
 }
 
 echo '-----> Found a "export"-file'
@@ -14,8 +21,9 @@ cat $BP_DIR/export | indent
 echo 'Print environment'
 env | indent
 
-ls /app/.apt
-ls /app/.apt/usr
-ls /app/.apt/usr/lib
-ls /app/.apt/usr/include
-ls /app/.apt/usr/include/xmlsec1
+print_contents_if_exists /app
+print_contents_if_exists /app/.apt
+print_contents_if_exists /app/.apt/usr
+print_contents_if_exists /app/.apt/usr/lib
+print_contents_if_exists /app/.apt/usr/include
+print_contents_if_exists /app/.apt/usr/include/xmlsec1
