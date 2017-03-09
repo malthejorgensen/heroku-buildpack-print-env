@@ -13,3 +13,9 @@ cat $BP_DIR/export | indent
 
 echo 'Print environment'
 env | indent
+
+ls /app/.apt
+ls /app/.apt/usr
+ls /app/.apt/usr/lib
+ls /app/.apt/usr/include
+ls /app/.apt/usr/include/xmlsec1
