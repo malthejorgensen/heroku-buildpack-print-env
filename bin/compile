@@ -31,8 +31,8 @@ print_contents_if_exists /app/.apt/usr/lib
 print_contents_if_exists /app/.apt/usr/include
 print_contents_if_exists /app/.apt/usr/include/xmlsec1
 
-echo '\$BP_DIR: $BP_DIR'
-echo '\$BUILD_DIR: $BUILD_DIR'
+echo "\$BP_DIR: $BP_DIR"
+echo "\$BUILD_DIR: $BUILD_DIR"
 export CPATH=$BUILD_DIR/.apt/usr/include/xmlsec1:$CPATH
 export INCLUDE_PATH=$BUILD_DIR/.apt/usr/include/xmlsec1:$INCLUDE_PATH
 export C_INCLUDE_PATH=$BUILD_DIR/.apt/usr/include/xmlsec1:$C_INCLUDE_PATH
