@@ -28,9 +28,9 @@ print_contents_if_exists /app/.apt/usr/lib
 print_contents_if_exists /app/.apt/usr/include
 print_contents_if_exists /app/.apt/usr/include/xmlsec1
 
-export CPATH=$BUILD_DIR/.apt/usr/include/xmlsec1:$CPATH
-export INCLUDE_PATH=$BUILD_DIR/.apt/usr/include/xmlsec1:$INCLUDE_PATH
-export C_INCLUDE_PATH=$BUILD_DIR/.apt/usr/include/xmlsec1:$C_INCLUDE_PATH
+export CPATH=$BP_DIR/.apt/usr/include/xmlsec1:$CPATH
+export INCLUDE_PATH=$BP_DIR/.apt/usr/include/xmlsec1:$INCLUDE_PATH
+export C_INCLUDE_PATH=$BP_DIR/.apt/usr/include/xmlsec1:$C_INCLUDE_PATH
 
 # give environment to later buildpacks
 export | grep -E -e ' (PATH|LD_LIBRARY_PATH|LIBRARY_PATH|INCLUDE_PATH|CPATH|CPPPATH|PKG_CONFIG_PATH)='  > "$BP_DIR/export"
